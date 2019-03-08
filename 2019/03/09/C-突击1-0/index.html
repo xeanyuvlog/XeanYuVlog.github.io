@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="C++ 突击系列文章学习目标  C++是什么语言 C++和C语言的区别 编辑器的选择 Hello World include的注意点 cout 和 cin  双冒号作用域和运算符 空间命名namespace的使用  C++是什么语言?面向对象编程语言，继承了C的特点，由Bjarne Stroustrup开发，据说是为了让编程变得更快乐，虽然我也没感受的到快乐，可能这就是大牛和萌新的区别吧，但是相比">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++突击1.0">
+<meta property="og:url" content="http://yoursite.com/2019/03/09/C-突击1-0/index.html">
+<meta property="og:site_name" content="XeanYu&#39;s Blog">
+<meta property="og:description" content="C++ 突击系列文章学习目标  C++是什么语言 C++和C语言的区别 编辑器的选择 Hello World include的注意点 cout 和 cin  双冒号作用域和运算符 空间命名namespace的使用  C++是什么语言?面向对象编程语言，继承了C的特点，由Bjarne Stroustrup开发，据说是为了让编程变得更快乐，虽然我也没感受的到快乐，可能这就是大牛和萌新的区别吧，但是相比">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://s2.ax1x.com/2019/03/08/ASindU.jpg">
+<meta property="og:updated_time" content="2019-03-08T18:17:47.146Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++突击1.0">
+<meta name="twitter:description" content="C++ 突击系列文章学习目标  C++是什么语言 C++和C语言的区别 编辑器的选择 Hello World include的注意点 cout 和 cin  双冒号作用域和运算符 空间命名namespace的使用  C++是什么语言?面向对象编程语言，继承了C的特点，由Bjarne Stroustrup开发，据说是为了让编程变得更快乐，虽然我也没感受的到快乐，可能这就是大牛和萌新的区别吧，但是相比">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/03/08/ASindU.jpg">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>C++突击1.0</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="http://github.com/XeanYu">项目</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2019/03/03/NOI-我来了/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/03/09/C-突击1-0/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/03/09/C-突击1-0/&text=C++突击1.0"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/03/09/C-突击1-0/&title=C++突击1.0"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/03/09/C-突击1-0/&is_video=false&description=C++突击1.0"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=C++突击1.0&body=Check out this article: http://yoursite.com/2019/03/09/C-突击1-0/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/03/09/C-突击1-0/&title=C++突击1.0"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/03/09/C-突击1-0/&title=C++突击1.0"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/03/09/C-突击1-0/&title=C++突击1.0"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/03/09/C-突击1-0/&title=C++突击1.0"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/03/09/C-突击1-0/&name=C++突击1.0&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#C-突击系列"><span class="toc-number">1.</span> <span class="toc-text">C++ 突击系列</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#C-是什么语言"><span class="toc-number">1.0.1.</span> <span class="toc-text">C++是什么语言?</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-和C的区别"><span class="toc-number">1.1.</span> <span class="toc-text">C++和C的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编辑器的选择"><span class="toc-number">1.2.</span> <span class="toc-text">编辑器的选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hello-World"><span class="toc-number">1.3.</span> <span class="toc-text">Hello World</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#include的注意点"><span class="toc-number">1.4.</span> <span class="toc-text">include的注意点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cout-和-cin"><span class="toc-number">1.5.</span> <span class="toc-text">cout 和 cin</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#双冒号作用域和运算符"><span class="toc-number">1.6.</span> <span class="toc-text">双冒号作用域和运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#空间命名namespace的使用"><span class="toc-number">1.7.</span> <span class="toc-text">空间命名namespace的使用</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        C++突击1.0
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">XeanYu's Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-03-08T18:16:45.000Z" itemprop="datePublished">2019-03-09</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/C/">C++</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="C-突击系列"><a href="#C-突击系列" class="headerlink" title="C++ 突击系列"></a>C++ 突击系列</h3><p>文章学习目标</p>
+<ul>
+<li>C++是什么语言</li>
+<li>C++和C语言的区别</li>
+<li>编辑器的选择</li>
+<li>Hello World</li>
+<li>include的注意点</li>
+<li>cout 和 cin </li>
+<li>双冒号作用域和运算符</li>
+<li>空间命名namespace的使用</li>
+</ul>
+<h5 id="C-是什么语言"><a href="#C-是什么语言" class="headerlink" title="C++是什么语言?"></a>C++是什么语言?</h5><p>面向对象编程语言，继承了C的特点，由Bjarne Stroustrup开发，据说是为了让编程变得更快乐，虽然我也没感受的到快乐，可能这就是大牛和萌新的区别吧，但是相比C来说，的确快乐一些。<br>C++ 在C的基础上进行了扩充和完善<br>C++ 的应用范围偏底层偏后台，比如游戏后台，游戏开发，移动端APP都可以用C++ 进行开发。</p>
+<p>我学C++ 主要还是OI现在基本主角是C++。</p>
+<p>附上Bjarne Strustrup大牛聪明绝顶的图片<br><img src="https://s2.ax1x.com/2019/03/08/ASindU.jpg" alt="Bjarne Strustrup"></p>
+<h4 id="C-和C的区别"><a href="#C-和C的区别" class="headerlink" title="C++和C的区别"></a>C++和C的区别</h4><p>C++ 不是C语言的升级版，也不是C语言的竞争对手。<br>C语言: 面向过程<br>C++: 面向对象</p>
+<h4 id="编辑器的选择"><a href="#编辑器的选择" class="headerlink" title="编辑器的选择"></a>编辑器的选择</h4><p>我在用巨硬的Visual Studio</p>
+<h4 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h4><p>语言通用标准<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt; &quot;Hello World&quot; &lt;&lt; endl;</span><br><span class="line">    // cout: 标准输出</span><br><span class="line">    // endl: endline 换行符,和&apos;\n&apos;一样。</span><br><span class="line">    </span><br><span class="line">	system(&quot;pause&quot;); // 暂停</span><br><span class="line">	return EXIT_SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译后,其输出结果为:<br> Hello World</p>
+<h4 id="include的注意点"><a href="#include的注意点" class="headerlink" title="include的注意点"></a>include的注意点</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;lib_name&gt;</span><br><span class="line">// 这种&lt;&gt;的引入，通常表示引入编译器类库路径的头文件</span><br><span class="line"></span><br><span class="line">#include &quot;lib_name&quot;</span><br><span class="line">// 这种&quot;&quot;通常表示在代码路径下引入头文件</span><br></pre></td></tr></table></figure>
+<p>还要注意C的库和C++的库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br></pre></td></tr></table></figure></p>
+<p>其中的区别在于后缀名.h<br>第一个引入是C++的库，第二个是C语言的库，这里要注意的是，C++的String和C语言的String.h的库没有半毛钱关系。在C++中，C的库都会去掉.h，在文件头加上字符c<br>就像这样<code>#include &lt;cstring&gt;</code> 其中的<code>cstring</code>和<code>string.h</code>才是相对应的。</p>
+<h4 id="cout-和-cin"><a href="#cout-和-cin" class="headerlink" title="cout 和 cin"></a>cout 和 cin</h4><p>其中要说的是，只有引入了<code>iostream</code>才可以使用。<br>其中cout代表输出，就像output<br>其中cin代表输入,就像input</p>
+<h4 id="双冒号作用域和运算符"><a href="#双冒号作用域和运算符" class="headerlink" title="双冒号作用域和运算符"></a>双冒号作用域和运算符</h4><p><strong>使用全局和局部变量</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int a = 100;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int a = 10;</span><br><span class="line">	cout &lt;&lt; &quot;a: &quot; &lt;&lt; a &lt;&lt; endl; // 结果为10</span><br><span class="line">	cout &lt;&lt; &quot;::a: &quot; &lt;&lt; ::a &lt;&lt; endl; // 结果为100</span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">	return EXIT_SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其中要注意的是<br>::a 是使用全局变量a，就像static<br>a 是在main函数中的局部变量</p>
+<p><strong>其他的::</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;	</span><br><span class="line">	std::cout &lt;&lt; &quot;Hello World&quot; &lt;&lt; std::endl;</span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">	return EXIT_SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其中我们没有使用<code>using namespace std;</code></p>
+<h4 id="空间命名namespace的使用"><a href="#空间命名namespace的使用" class="headerlink" title="空间命名namespace的使用"></a>空间命名namespace的使用</h4><p><strong>命名方法:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">namespace &#123;</span><br><span class="line">	xxx;</span><br><span class="line">	xxx;</span><br><span class="line">	xxx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>可存放的对象:</strong></p>
+<ul>
+<li>变量</li>
+<li>常量</li>
+<li>函数</li>
+<li>类</li>
+<li>命名空间(意味着可以进行嵌套)</li>
+</ul>
+<p><strong>定义两个相同的命名空间</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">namespace A &#123;</span><br><span class="line">	int a = 10;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">namespace A &#123;</span><br><span class="line">	int b = 20;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>最后造成的结果不是后面的A覆盖前面的A，而是两个A合并,最后就会变成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">namespace A &#123;</span><br><span class="line">	int a = 10;</span><br><span class="line">    int b = 20;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>命名空间嵌套</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">namespace A &#123;</span><br><span class="line"></span><br><span class="line">	namespace B &#123;</span><br><span class="line">    	int a = 10;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>命名空间读取</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// file: test.h</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">namespace A &#123;</span><br><span class="line">	namespace B &#123;</span><br><span class="line">		int a = 10;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>继续看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// file: main.c</span><br><span class="line"></span><br><span class="line">#include &quot;test.h&quot;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;	</span><br><span class="line">	std::cout &lt;&lt; &quot;A::B::a&quot; &lt;&lt; A::B::a &lt;&lt; std::endl; // 结果为10</span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">	return EXIT_SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=30512371&auto=1&height=66"></iframe>
+
+
+
+
+
+
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="http://github.com/XeanYu">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#C-突击系列"><span class="toc-number">1.</span> <span class="toc-text">C++ 突击系列</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#C-是什么语言"><span class="toc-number">1.0.1.</span> <span class="toc-text">C++是什么语言?</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-和C的区别"><span class="toc-number">1.1.</span> <span class="toc-text">C++和C的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编辑器的选择"><span class="toc-number">1.2.</span> <span class="toc-text">编辑器的选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hello-World"><span class="toc-number">1.3.</span> <span class="toc-text">Hello World</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#include的注意点"><span class="toc-number">1.4.</span> <span class="toc-text">include的注意点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cout-和-cin"><span class="toc-number">1.5.</span> <span class="toc-text">cout 和 cin</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#双冒号作用域和运算符"><span class="toc-number">1.6.</span> <span class="toc-text">双冒号作用域和运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#空间命名namespace的使用"><span class="toc-number">1.7.</span> <span class="toc-text">空间命名namespace的使用</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/03/09/C-突击1-0/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/03/09/C-突击1-0/&text=C++突击1.0"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/03/09/C-突击1-0/&title=C++突击1.0"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/03/09/C-突击1-0/&is_video=false&description=C++突击1.0"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=C++突击1.0&body=Check out this article: http://yoursite.com/2019/03/09/C-突击1-0/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/03/09/C-突击1-0/&title=C++突击1.0"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/03/09/C-突击1-0/&title=C++突击1.0"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/03/09/C-突击1-0/&title=C++突击1.0"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/03/09/C-突击1-0/&title=C++突击1.0"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/03/09/C-突击1-0/&name=C++突击1.0&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 XeanYu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="http://github.com/XeanYu">项目</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
