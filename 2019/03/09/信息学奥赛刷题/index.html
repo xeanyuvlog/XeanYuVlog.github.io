@@ -15,7 +15,7 @@
 <meta property="og:description" content="信息学奥赛刷题 三位数反转要求: 输出一个三位数，分离出百分位，十位和个位，反转后输出样例输入:123样例输出:321 123456789// 三位数反转 带0版本.cpp#include &amp;lt;iostream&amp;gt;using namespace std;int main()&amp;#123;    int n; // 声明整数类型变量n    cin &amp;gt;&amp;gt; n; // 输入三位数">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEB4068eec587d84278a0467a34cc3461d8?method=download&shareKey=db9a46c1db65d6b1133b0950968fbf05">
-<meta property="og:updated_time" content="2019-03-09T10:41:16.153Z">
+<meta property="og:updated_time" content="2019-03-09T10:47:37.560Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="信息学奥赛刷题">
 <meta name="twitter:description" content="信息学奥赛刷题 三位数反转要求: 输出一个三位数，分离出百分位，十位和个位，反转后输出样例输入:123样例输出:321 123456789// 三位数反转 带0版本.cpp#include &amp;lt;iostream&amp;gt;using namespace std;int main()&amp;#123;    int n; // 声明整数类型变量n    cin &amp;gt;&amp;gt; n; // 输入三位数">
@@ -103,7 +103,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#信息学奥赛刷题"><span class="toc-number">1.</span> <span class="toc-text">信息学奥赛刷题</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#信息学奥赛刷题"><span class="toc-number">1.</span> <span class="toc-text">信息学奥赛刷题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#三位数反转"><span class="toc-number">1.0.1.</span> <span class="toc-text">三位数反转</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#交换变量"><span class="toc-number">1.0.2.</span> <span class="toc-text">交换变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#鸡兔同笼"><span class="toc-number">1.0.3.</span> <span class="toc-text">鸡兔同笼</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -148,7 +148,7 @@
 
   <div class="content" itemprop="articleBody">
     <h3 id="信息学奥赛刷题"><a href="#信息学奥赛刷题" class="headerlink" title="信息学奥赛刷题"></a>信息学奥赛刷题</h3><hr>
-<p><strong>三位数反转</strong><br>要求: 输出一个三位数，分离出百分位，十位和个位，反转后输出<br>样例输入:<br>123<br>样例输出:<br>321</p>
+<h5 id="三位数反转"><a href="#三位数反转" class="headerlink" title="三位数反转"></a>三位数反转</h5><p>要求: 输出一个三位数，分离出百分位，十位和个位，反转后输出<br>样例输入:<br>123<br>样例输出:<br>321</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 三位数反转 带0版本.cpp</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int n; // 声明整数类型变量n</span><br><span class="line">    cin &gt;&gt; n; // 输入三位数</span><br><span class="line">    cout &lt;&lt; n%10 &lt;&lt; n/10 % 10 &lt;&lt; n/100; // 输出</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>解析：<br><strong>取个位：</strong> 三位数我们先除10，剩下的余数就是个位的数。<br>比如: 123 / 10 = 12····3,也可以这么想，12 * 10 + 3 = 123</p>
 <p><strong>取十位:</strong> 我们先取百位和十位，就变成了两位数，然后对两位数再取个位的数<br>比如: 123我们取十位，我们先123 / 10 = 12(这个时候是整数类型，所以也是整数)，然后取余12 / 10 = 1 ·····2,我们就取到了十位数2</p>
@@ -156,8 +156,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 三位数反转 不带0版本.cpp</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">	int n,m;</span><br><span class="line">	cin &gt;&gt; n; // 输入</span><br><span class="line">	m = (n % 10)*100 + (n/10%10)* 10 + (n/100)</span><br><span class="line">	cout &lt;&lt; m;</span><br><span class="line">    </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>解析:<br>这个方法是第一个方法的变种<br>比如：我们输入123，先取个位3，然后3 <em> 100 = 300,取十位2，然后2 </em> 10 = 20，再取百位1.<br>最后我们得到300,20,1<br>300 + 20 + 1 = 321<br>我们就这样做到了三位数反转</p>
 <p><strong>如果在考场上遇到这种情况，先问清楚是否保留0，然后再选择方法</strong></p>
-<hr>
-<p><strong>交换变量</strong><br>要求: 输入两个整数a和b,交换二者的值，然后输出<br>样例输入:<br>123 32<br>样例输出:<br>32 123</p>
+<h5 id="交换变量"><a href="#交换变量" class="headerlink" title="交换变量"></a>交换变量</h5><p>要求: 输入两个整数a和b,交换二者的值，然后输出<br>样例输入:<br>123 32<br>样例输出:<br>32 123</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 变换变量v1.cpp</span><br><span class="line">#include &lt;iosteam&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">	int a,b,t;</span><br><span class="line">    	</span><br><span class="line">        // 空格输入</span><br><span class="line">	cin &gt;&gt; a;</span><br><span class="line"> 	cin &gt;&gt; b;</span><br><span class="line">    </span><br><span class="line">	t = a;</span><br><span class="line">	a = b;</span><br><span class="line">	b = t;</span><br><span class="line">    </span><br><span class="line">	cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>解析:<br>想像现在有三个不同颜色的水瓶，前两个装了水，利用第三个瓶子给另外两个瓶子换水。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 变量转换v2.cpp</span><br><span class="line"></span><br><span class="line">#include &lt;iosteam&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">	int a,b;</span><br><span class="line">   	cin &gt;&gt; a;</span><br><span class="line">	cin &gt;&gt; b;</span><br><span class="line">	a = a + b;</span><br><span class="line">	b = a - b; // 此时b 是用户输入的a的值</span><br><span class="line">	a = a - b; // a和b的总和减掉a</span><br><span class="line">    </span><br><span class="line">	cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -169,8 +168,7 @@
 <li>a = a - b = 11- 10 = 1</li>
 <li>最后，a = 1,b = 10其值就换过来了。</li>
 </ol>
-<hr>
-<p><strong>鸡兔同笼</strong><br>要求: 已知鸡和兔的总数量为n,总腿数位m。输入n和m，依次输出鸡的数目和兔的数目<br>如果无解，则输出No answer<br>样例输入:<br>14 32<br>样例输出:<br>12 2</p>
+<h5 id="鸡兔同笼"><a href="#鸡兔同笼" class="headerlink" title="鸡兔同笼"></a>鸡兔同笼</h5><p>要求: 已知鸡和兔的总数量为n,总腿数位m。输入n和m，依次输出鸡的数目和兔的数目<br>如果无解，则输出No answer<br>样例输入:<br>14 32<br>样例输出:<br>12 2</p>
 <p>样例输入:<br>10 16<br>样例输出:<br>No answer</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 鸡兔同笼v1.cpp</span><br><span class="line">#include &lt;iosteam&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int n,m,a,b;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    cin &gt;&gt; m;</span><br><span class="line">    </span><br><span class="line">    a = (4n - m)/2;</span><br><span class="line">    b = n - a;</span><br><span class="line">	</span><br><span class="line">    if(m %2 = 1 || a &lt; 0 || b &lt; 0)&#123;</span><br><span class="line">    	cout &lt;&lt; &quot;No answer&quot;;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    cout &lt;&lt; b &lt;&lt; &quot; &quot; &lt;&lt; a;</span><br><span class="line">	return 0;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>解析:<br>鸡兔同笼问题是一个非常典型的一个解方程的问题<br><img src="https://note.youdao.com/yws/api/personal/file/WEB4068eec587d84278a0467a34cc3461d8?method=download&amp;shareKey=db9a46c1db65d6b1133b0950968fbf05" alt="逻辑判断考题鸡兔同笼"></p>
@@ -200,7 +198,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#信息学奥赛刷题"><span class="toc-number">1.</span> <span class="toc-text">信息学奥赛刷题</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#信息学奥赛刷题"><span class="toc-number">1.</span> <span class="toc-text">信息学奥赛刷题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#三位数反转"><span class="toc-number">1.0.1.</span> <span class="toc-text">三位数反转</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#交换变量"><span class="toc-number">1.0.2.</span> <span class="toc-text">交换变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#鸡兔同笼"><span class="toc-number">1.0.3.</span> <span class="toc-text">鸡兔同笼</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
