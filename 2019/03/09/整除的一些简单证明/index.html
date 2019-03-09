@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="首先要知道的基本常识 整数间的+ - * 得到的结果都是整数 整数间的除法所得到的商就未必是整数  整除 定义: 设a,b是++任意++的两个整数，其中b≠0，如果存在一个整数q使得等式 ++a = bq 成立++，我们就说b整除a或a被b整除，++记作b|a++,此时我们把b叫做a的因数，把a叫做b的倍数。如果q不存在，我们就说b不能被a或者a不被b整除。  问题1:若a是b的倍数，b是c的倍数">
+    <meta name="description" content="首先要知道的基本常识 整数间的+ - * 得到的结果都是整数 整数间的除法所得到的商就未必是整数  整除 定义: 设a,b是任意的两个整数，其中b≠0，如果存在一个整数q使得等式 a = bq 成立，我们就说b整除a或a被b整除，记作b|a,此时我们把b叫做a的因数，把a叫做b的倍数。如果q不存在，我们就说b不能被a或者a不被b整除。  问题1:若a是b的倍数，b是c的倍数，证明a是c的倍数.也就">
 <meta name="keywords" content="math">
 <meta property="og:type" content="article">
 <meta property="og:title" content="整除的一些简单证明">
 <meta property="og:url" content="http://yoursite.com/2019/03/09/整除的一些简单证明/index.html">
 <meta property="og:site_name" content="XeanYu&#39;s Blog">
-<meta property="og:description" content="首先要知道的基本常识 整数间的+ - * 得到的结果都是整数 整数间的除法所得到的商就未必是整数  整除 定义: 设a,b是++任意++的两个整数，其中b≠0，如果存在一个整数q使得等式 ++a = bq 成立++，我们就说b整除a或a被b整除，++记作b|a++,此时我们把b叫做a的因数，把a叫做b的倍数。如果q不存在，我们就说b不能被a或者a不被b整除。  问题1:若a是b的倍数，b是c的倍数">
+<meta property="og:description" content="首先要知道的基本常识 整数间的+ - * 得到的结果都是整数 整数间的除法所得到的商就未必是整数  整除 定义: 设a,b是任意的两个整数，其中b≠0，如果存在一个整数q使得等式 a = bq 成立，我们就说b整除a或a被b整除，记作b|a,此时我们把b叫做a的因数，把a叫做b的倍数。如果q不存在，我们就说b不能被a或者a不被b整除。  问题1:若a是b的倍数，b是c的倍数，证明a是c的倍数.也就">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-09T13:18:30.037Z">
+<meta property="og:updated_time" content="2019-03-09T13:23:25.421Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="整除的一些简单证明">
-<meta name="twitter:description" content="首先要知道的基本常识 整数间的+ - * 得到的结果都是整数 整数间的除法所得到的商就未必是整数  整除 定义: 设a,b是++任意++的两个整数，其中b≠0，如果存在一个整数q使得等式 ++a = bq 成立++，我们就说b整除a或a被b整除，++记作b|a++,此时我们把b叫做a的因数，把a叫做b的倍数。如果q不存在，我们就说b不能被a或者a不被b整除。  问题1:若a是b的倍数，b是c的倍数">
+<meta name="twitter:description" content="首先要知道的基本常识 整数间的+ - * 得到的结果都是整数 整数间的除法所得到的商就未必是整数  整除 定义: 设a,b是任意的两个整数，其中b≠0，如果存在一个整数q使得等式 a = bq 成立，我们就说b整除a或a被b整除，记作b|a,此时我们把b叫做a的因数，把a叫做b的倍数。如果q不存在，我们就说b不能被a或者a不被b整除。  问题1:若a是b的倍数，b是c的倍数，证明a是c的倍数.也就">
     
     
         
@@ -150,18 +150,18 @@
 <li>整数间的除法所得到的商就未必是整数</li>
 </ol>
 <h5 id="整除"><a href="#整除" class="headerlink" title="整除"></a>整除</h5><blockquote>
-<p><strong>定义</strong>: 设a,b是++任意++的两个整数，其中b≠0，如果存在一个整数q使得等式 ++a = bq 成立++，我们就说b整除a或a被b整除，++记作b|a++,此时我们把b叫做a的因数，把a叫做b的倍数。如果q不存在，我们就说b不能被a或者a不被b整除。</p>
+<p>定义: 设a,b是任意的两个整数，其中b≠0，如果存在一个整数q使得等式 a = bq 成立，我们就说b整除a或a被b整除，记作b|a,此时我们把b叫做a的因数，把a叫做b的倍数。如果q不存在，我们就说b不能被a或者a不被b整除。</p>
 </blockquote>
-<h5 id="问题1"><a href="#问题1" class="headerlink" title="问题1:"></a>问题1:</h5><p>若a是b的倍数，b是c的倍数，证明a是c的倍数.也就是a|b,b|c =&gt; a|c<br>证:<br>∵a|b,b|c<br>∴ 得知a1,b1存在<br>① a = a1<em>b<br>② b = b1</em>c<br>将②代入①中得<br>a = a1<em>b1</em>c<br>由此可得<br>a = (a1<em>b1)</em>c</p>
+<h5 id="问题1"><a href="#问题1" class="headerlink" title="问题1:"></a>问题1:</h5><p>若a是b的倍数，b是c的倍数，证明a是c的倍数.也就是a|b,b|c =&gt; a|c<br>证:<br>∵a|b,b|c<br>∴ 得知a1,b1存在<br>① a = a1 <em> b<br>② b = b1 </em> c<br>将②代入①中得<br>a = a1 <em> b1 </em> c<br>由此可得<br>a = (a1 <em> b1) </em> c</p>
 <p>证完！</p>
 <p>由此可得<strong>定理1</strong>: <strong>a|b,b|c =&gt; a|c</strong></p>
-<h5 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h5><p>若a是c的倍数，b是c的倍数，那么a±b是c的倍数.也就是a|c ，b|c =&gt; a±b|c<br>证:<br>∵ a|c,b|c<br>∴存在a1,b1<br>得: a = a1<em>c , b = b1</em>c<br>∵a ± b = a1<em>c ± b1</em>c<br>∴ a ± b = c * (a1 ± b1)<br>∴a ± b | c</p>
+<h5 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h5><p>若a是c的倍数，b是c的倍数，那么a±b是c的倍数.也就是a|c ，b|c =&gt; a±b|c<br>证:<br>∵ a|c,b|c<br>∴存在a1,b1<br>得: a = a1 <em> c , b = b1 </em> c<br>∵a ± b = a1 <em> c ± b1 </em> c<br>∴ a ± b = c * (a1 ± b1)<br>∴a ± b | c</p>
 <p>证完！</p>
 <p>由此可得<strong>定理2: a|c,b|c =&gt; a ± b | c</strong></p>
-<h5 id="问题3"><a href="#问题3" class="headerlink" title="问题3"></a>问题3</h5><p>若a1,a2,a3,a4,a5……an,都是m的倍数，q1,q2,q3,q4…..qn是任意n个整数，则q1<em>a1 + q2</em>a2+q3<em>a3+….qn</em>an是m的倍数吗？求证！<br>证:<br>∵a1|m,a2|m,a3|m….an|m<br>∴存在整数b1,b2,b3….bn<br>又∵存在整数q1,q2,q3,q4……qn<br>∴q1<em>a1 = q1</em>b1<em>m<br>q2</em>a2 = q2<em>b2</em>m<br>……<br>qn<em>an = qn</em>bn*m成立</p>
-<p>∴q1<em>a1 ± q2</em>a2 ± q3<em>a3 ± ….. qn</em>an = q1<em>b2</em>m ± q2<em>b2</em>m ± q3<em>b3</em>m ± …..qn<em>bn</em>m<br>提出公因式m<br>q1<em>a1 ± q2</em>a2 ± q3<em>a3 ± ….. qn</em>an = m(q1<em>b2 ± q2</em>b2 ± q3<em>b3 ± …..qn</em>bn)<br>∴ q1<em>a1 ± q2</em>a2 ± q3<em>a3 ± ….. qn</em>an | m</p>
+<h5 id="问题3"><a href="#问题3" class="headerlink" title="问题3"></a>问题3</h5><p>若a1,a2,a3,a4,a5……an,都是m的倍数，q1,q2,q3,q4…..qn是任意n个整数，则q1 <em> a1 + q2 </em> a2 + q3 <em> a3 +….qn </em> an是m的倍数吗？求证！<br>证:<br>∵a1|m,a2|m,a3|m….an|m<br>∴存在整数b1,b2,b3….bn<br>又∵存在整数q1,q2,q3,q4……qn<br>∴q1 <em> a1 = q1 </em> b1 <em> m<br>q2 </em> a2 = q2 <em> b2 </em> m<br>……<br>qn <em> an = qn </em> bn * m成立</p>
+<p>∴q1 <em> a1 ± q2 </em> a2 ± q3 <em> a3 ± ….. qn </em> an = q1 <em> b2 </em> m ± q2 <em> b2 </em> m ± q3 <em> b3 </em> m ± …..qn <em> bn </em> m<br>提出公因式m<br>q1 <em> a1 ± q2 </em> a2 ± q3 <em> a3 ± ….. qn </em> an = m(q1 <em> b2 ± q2 </em> b2 ± q3 <em> b3 ± …..qn </em> bn)<br>∴ q1 <em> a1 ± q2 </em> a2 ± q3 <em> a3 ± ….. qn </em> an | m</p>
 <p>证完!</p>
-<p>由此得到<strong>定理3: a1,a2,a3,a4,a5……an|m，q1,q2,q3,q4…..qn是任意n个整数，则q1<em>a1 + q2</em>a2+q3<em>a3+….qn</em>an|m</strong></p>
+<p>由此得到<strong>定理3: a1,a2,a3,a4,a5……an|m，q1,q2,q3,q4…..qn是任意n个整数，则q1 <em> a1 + q2 </em> a2+q3 <em> a3+….qn </em> an|m</strong></p>
 
   </div>
 </article>
